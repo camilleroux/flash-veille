@@ -106,7 +106,9 @@ for (const surface of ['terminal', 'desktop'] as const) {
       expect(await band.find({ type: 'Text', text: 'ZOE' })).toBeDefined()
       expect(await band.find({ type: 'Link', text: /Mon billet tout frais/ })).toBeDefined()
 
-      expect(await veille('retirer zoe')).toMatchObject({ text: 'Retiré : Le blog de Zoé.' })
+      // Le code, le nom du site ou son adresse : tout le monde ne retient pas « ZOE »
+      expect(await veille('retirer inconnu')).toMatchObject({ text: expect.stringContaining('Aucune source') })
+      expect(await veille('retirer zoe.dev')).toMatchObject({ text: 'Retiré : Le blog de Zoé.' })
       expect(await band.find({ type: 'Link', text: /Mon billet/ })).toBeUndefined()
       expect(await band.find({ type: 'Link', text: /PrettyTable/ })).toBeDefined()
       expect(await veille('sources')).not.toMatchObject({ text: expect.stringContaining('Zoé') })

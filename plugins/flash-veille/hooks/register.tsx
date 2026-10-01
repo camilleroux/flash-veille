@@ -39,7 +39,7 @@ const FRAME_MS = 60
 const LABEL = '📰 Veille'
 const STAR = '★ '
 const ENGINE_CONTROL = 5
-const USAGE = '/veille [tout | off | sources | ajouter <site> | retirer <code>]'
+const USAGE = '/veille [tout | off | sources | ajouter <site> | retirer <site>]'
 
 const items = atom({ plugin: 'flash-veille', key: 'items' } as const, [])
 const fetchedAt = atom({ plugin: 'flash-veille', key: 'fetchedAt' } as const, 0)
@@ -151,7 +151,7 @@ export const register: Register = (on, options) => {
     await $.command.register({
       name: 'veille',
       description: 'Flash veille : les actus fraîches au-dessus du prompt',
-      argumentHint: '[tout|off|sources|ajouter <site>|retirer <code>]',
+      argumentHint: '[tout|off|sources|ajouter <site>|retirer <site>]',
     })
     const wasHidden = (await $.store.get(HIDDEN_KEY)) === true
     await update($, isBandHidden, () => wasHidden)
@@ -204,7 +204,7 @@ export const register: Register = (on, options) => {
         const custom = await read($, customSources)
         const lines = [
           ...builtins.map(s => `${s.short.padEnd(4)}${s.name}`),
-          ...custom.map(s => `${s.short.padEnd(4)}${s.name} (ajoutée : /veille retirer ${s.short.toLowerCase()})`),
+          ...custom.map(s => `${s.short.padEnd(4)}${s.name} (ajoutée : /veille retirer ${s.id.replace(/^perso-/, '').split('.')[0]})`),
         ]
 
         return {
@@ -252,8 +252,14 @@ export const register: Register = (on, options) => {
       }
       case 'retirer': {
         const custom = await read($, customSources)
-        const wanted = arg.toLowerCase()
-        const gone = custom.find(s => s.short.toLowerCase() === wanted || s.id === wanted || s.url === arg)
+        // Le code (kor), le site (korben, korben.info), l'adresse du flux, ou un bout du nom s'il est sans ambiguïté
+        const wanted = arg.toLowerCase().replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+        const names = (s: CustomSource) => {
+          const host = s.id.replace(/^perso-/, '')
+          return [s.short.toLowerCase(), host, host.split('.')[0], s.url.toLowerCase().replace(/^https?:\/\/(www\.)?/, '')]
+        }
+        const inName = custom.filter(s => wanted.length >= 3 && s.name.toLowerCase().includes(wanted))
+        const gone = custom.find(s => names(s).includes(wanted)) ?? (inName.length === 1 ? inName[0] : undefined)
         if (!gone) {
           return { text: `Aucune source ajoutée ne correspond à « ${arg} » (voir /veille sources).` }
         }

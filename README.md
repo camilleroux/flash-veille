@@ -28,7 +28,7 @@ Le bandeau apparaît au-dessus du prompt dès la session suivante.
 | `/veille off` | Masque le bandeau (et le panneau) ; mémorisé d'une session à l'autre |
 | `/veille sources` | Liste les sources suivies |
 | `/veille ajouter <site>` | Suit un autre site : `/veille ajouter korben.info` trouve son flux tout seul |
-| `/veille retirer <code>` | Ne plus suivre un site ajouté avec `/veille ajouter`, désigné par le code à 3 lettres que donne `/veille sources` : `/veille retirer kor` pour Korben |
+| `/veille retirer <site>` | Ne plus suivre un site ajouté avec `/veille ajouter` : `/veille retirer korben` (son code `kor` ou `korben.info` marchent aussi) |
 
 Le bandeau se replie aussi avec `ctrl+x ctrl+a`.
 
