@@ -292,12 +292,12 @@ export const register: Register = (on, options) => {
     const age = ago(item.at, now)
     const counter = `${position + 1}/${all.length}`
     // Le titre est coupé ici, en colonnes réelles : la ligne ne passe jamais à la ligne.
-    // ENGINE_CONTROL : le « [-] » que Claude Code dessine au bout du bandeau
+    // ENGINE_CONTROL : le « [-] » que Claude Code dessine par-dessus le bout du bandeau ; on lui laisse sa place
     const fixed = columns(LABEL) + source.short.length + age.length + counter.length + 4 + ENGINE_CONTROL
     const title = revealFrame(fit(star(item) + item.title, e.props.bodyColumns - fixed), await read($, frame), FRAMES)
 
     return (
-      <Box width={e.props.bodyColumns} height={1} overflow="hidden" columnGap={1}>
+      <Box width={e.props.bodyColumns - ENGINE_CONTROL} height={1} overflow="hidden" columnGap={1}>
         <Text dimColor>{LABEL}</Text>
         <Text color={source.color} bold>
           {source.short}

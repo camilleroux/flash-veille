@@ -4,9 +4,7 @@ Le flash info du dev, au-dessus du prompt de [Claude Code](https://code.claude.c
 
 Pendant que vous codez, une ligne discrète fait défiler les actus fraîches de la tech francophone et des labos d'IA, une à la fois :
 
-```
-📰 Veille  HC 1h PrettyTable, une bibliothèque Python pour afficher des tableaux…  1/15
-```
+![Le bandeau Flash veille au-dessus du prompt de Claude Code](docs/demo.gif)
 
 Chaque titre est un lien vers la discussion d'origine : le post Bluesky, la page Human Coders News ou celle du Journal du hacker.
 
