@@ -6,7 +6,7 @@ Pendant que vous codez, une ligne discrète fait défiler les actus fraîches de
 
 ![Le bandeau Flash veille au-dessus du prompt de Claude Code](docs/demo.gif)
 
-Chaque titre est un lien vers la discussion d'origine : le post Bluesky, la page Human Coders News ou celle du Journal du hacker.
+Chaque titre mène là où l'actu a été partagée : la page de l'actu sur Human Coders News ou sur le Journal du hacker, et pour la veille de Camille Roux, son post sur Bluesky.
 
 > Flash veille est un *mod* Claude Code (un plugin à hooks de fonction) : il demande **Claude Code 2.1.287 ou plus récent**. L'API des mods est en accès anticipé et peut encore changer.
 
@@ -28,7 +28,7 @@ Le bandeau apparaît au-dessus du prompt dès la session suivante.
 | `/veille off` | Masque le bandeau (et le panneau) ; mémorisé d'une session à l'autre |
 | `/veille sources` | Liste les sources suivies |
 | `/veille ajouter <site>` | Suit un autre site : `/veille ajouter korben.info` trouve son flux tout seul |
-| `/veille retirer <code>` | Arrête de suivre un site ajouté : `/veille retirer kor` |
+| `/veille retirer <code>` | Ne plus suivre un site ajouté avec `/veille ajouter`, désigné par le code à 3 lettres que donne `/veille sources` : `/veille retirer kor` pour Korben |
 
 Le bandeau se replie aussi avec `ctrl+x ctrl+a`.
 
