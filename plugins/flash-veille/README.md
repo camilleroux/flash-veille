@@ -87,6 +87,8 @@ L'adresse de chaque requête vient de cette liste ou de ce que vous avez tapé :
 - `command.run` : ne reçoit que `/veille` (le hook ne s'abonne qu'à cette commande) ; les autres commandes ne passent pas par lui.
 - `ui.render` : dessine le bandeau au-dessus du prompt (`AbovePrompt`) et le panneau du mod (`Pane` ouvert par `/veille tout`) ; il ne modifie aucun autre affichage, et laisse la place à Claude Code dès qu'un sondage occupe le bandeau.
 
+Le détail est dans la [politique de confidentialité](https://github.com/camilleroux/flash-veille/blob/main/PRIVACY.md).
+
 > **In English.** Flash veille only sends read-only HTTPS GET requests, at most every 15 minutes, to the RSS/Atom feeds of the enabled sources listed above and to the site you pass to `/veille ajouter`. It sends no local data (no files, code, conversation or credentials), only the feed URL and a fixed User-Agent. It runs no commands, tools or agents and reads no files. It hooks `session.start` (registers `/veille`, starts the timers), `command.run` (only `/veille`) and `ui.render` (its own band above the prompt and its own pane).
 
 ## Développement

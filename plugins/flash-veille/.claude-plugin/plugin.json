@@ -8,6 +8,9 @@
   },
   "homepage": "https://www.camilleroux.com/veille/",
   "repository": "https://github.com/camilleroux/flash-veille",
+  "documentationUrl": "https://github.com/camilleroux/flash-veille#readme",
+  "supportUrl": "https://github.com/camilleroux/flash-veille/issues",
+  "privacyPolicyUrl": "https://github.com/camilleroux/flash-veille/blob/main/PRIVACY.md",
   "license": "MIT",
   "keywords": [
     "veille",
