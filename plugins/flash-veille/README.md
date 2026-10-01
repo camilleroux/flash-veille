@@ -4,7 +4,7 @@ Le flash info du dev, au-dessus du prompt de [Claude Code](https://code.claude.c
 
 Pendant que vous codez, une ligne discrète fait défiler les actus fraîches de la tech francophone et des labos d'IA, une à la fois :
 
-![Le bandeau Flash veille au-dessus du prompt de Claude Code](docs/demo.gif)
+![Le bandeau Flash veille au-dessus du prompt de Claude Code](https://raw.githubusercontent.com/camilleroux/flash-veille/main/docs/demo.gif)
 
 Chaque titre mène là où l'actu a été partagée : la page de l'actu sur Human Coders News ou sur le Journal du hacker, et pour la veille de Camille Roux, son post sur Bluesky.
 
@@ -92,12 +92,12 @@ L'adresse de chaque requête vient de cette liste ou de ce que vous avez tapé :
 ## Développement
 
 ```
-claude plugin validate plugins/flash-veille
-claude plugin test plugins/flash-veille
+claude plugin validate .
+claude plugin test .
 ```
 
-Pour essayer vos modifications : `claude --plugin-dir plugins/flash-veille`.
+Pour essayer vos modifications : `claude --plugin-dir .`.
 
 ## Licence
 
-[MIT](LICENSE), par [Camille Roux](https://www.camilleroux.com).
+[MIT](https://github.com/camilleroux/flash-veille/blob/main/LICENSE), par [Camille Roux](https://www.camilleroux.com).

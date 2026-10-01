@@ -17,6 +17,7 @@
     "journal-du-hacker",
     "anthropic"
   ],
+  "icon": "./.claude-plugin/icon.png",
   "types": "./types/index.d.ts",
   "userConfig": {
     "sources": {
