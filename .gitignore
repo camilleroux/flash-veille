@@ -1,0 +1,4 @@
+# Écrits par Claude Code au chargement du mod
+plugins/*/.claude-plugin/types/
+plugins/*/tsconfig.json
+.DS_Store

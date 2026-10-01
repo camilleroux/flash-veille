@@ -1,0 +1,47 @@
+{
+  "name": "flash-veille",
+  "version": "0.4.0",
+  "description": "Le flash info du dev au-dessus du prompt : les actus fraîches de Human Coders News, du Journal du hacker, de la veille de Camille Roux, de LinuxFr et des blogs IA (Anthropic, claude.dev, Claude Code…), une à la fois.",
+  "author": {
+    "name": "Camille Roux",
+    "url": "https://www.camilleroux.com"
+  },
+  "homepage": "https://www.camilleroux.com/veille/",
+  "repository": "https://github.com/camilleroux/flash-veille",
+  "license": "MIT",
+  "keywords": [
+    "veille",
+    "rss",
+    "actus",
+    "human-coders",
+    "journal-du-hacker",
+    "anthropic"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "sources": {
+      "type": "string",
+      "title": "Sources",
+      "description": "Sources intégrées, séparées par des virgules : hc, jdh, camille, linuxfr, korben, anthropic, claudedev, claudecode, openai, deepmind, huggingface, simonw. Pour un autre site : /veille ajouter <site>",
+      "default": "hc, jdh, camille, linuxfr, anthropic, claudedev, claudecode"
+    },
+    "rotationSeconds": {
+      "type": "number",
+      "title": "Rotation (secondes)",
+      "description": "Durée d'affichage de chaque actu dans le bandeau",
+      "default": 12
+    },
+    "keywords": {
+      "type": "string",
+      "title": "Mots-clés",
+      "description": "Mots-clés séparés par des virgules (ex. : IA, Rails, sécurité) : les actus qui en contiennent passent en premier, marquées ★",
+      "default": ""
+    },
+    "keywordsOnly": {
+      "type": "boolean",
+      "title": "Seulement les mots-clés",
+      "description": "N'afficher que les actus qui contiennent un des mots-clés",
+      "default": false
+    }
+  }
+}

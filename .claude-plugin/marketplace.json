@@ -1,0 +1,22 @@
+{
+  "name": "flash-veille",
+  "owner": {
+    "name": "Camille Roux",
+    "url": "https://www.camilleroux.com"
+  },
+  "metadata": {
+    "description": "Flash veille : le flash info du dev, au-dessus du prompt de Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "flash-veille",
+      "source": "./plugins/flash-veille",
+      "description": "Le flash info du dev au-dessus du prompt : les actus fraîches de Human Coders News, du Journal du hacker, de la veille de Camille Roux, de LinuxFr et des blogs IA (Anthropic, claude.dev, Claude Code…), une à la fois.",
+      "version": "0.4.0",
+      "author": { "name": "Camille Roux" },
+      "homepage": "https://www.camilleroux.com/veille/",
+      "category": "productivity",
+      "keywords": ["veille", "rss", "actus", "mod"]
+    }
+  ]
+}
